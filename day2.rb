@@ -43,4 +43,4 @@ arr2.each do |num|
     end
 end
 
-print(newArr)
+print(newArr.to_s + "\n")

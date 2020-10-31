@@ -10,6 +10,10 @@ class Confection
     def initialize(name)
         @name = name
     end
+
+    def prepare
+        puts "Baking at 350 degrees for 25 minutes"
+    end
 end
 
 class Cupcake < Confection
@@ -20,9 +24,6 @@ class Cupcake < Confection
 end
 
 class BananaCake < Confection
-    def prepare
-        puts "Baking at 350 degrees for 25 minutes"
-    end
 end
 
 cupcake = Cupcake.new("Red Velvet Cupcake")

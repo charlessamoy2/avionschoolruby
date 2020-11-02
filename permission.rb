@@ -16,25 +16,32 @@ module AdminPermisson
         @password = password
         @ip_address = ip_address
     end
-  
-    def login
-      puts "User logged in. IP address: #{@ip_address}"
-    end
-
-    def change_password(password)
+    
+    def change_password=(password)
         @password = password
         puts "Password changed! New password is: #{@password}"
+    end
+
+    protected
+    def login
+      puts "User logged in. IP address: #{@ip_address}"
     end
   end
   
   
   class Admin < User
     include AdminPermisson
+    def admin_login
+        self.login
+    end
   end
   
   
   class Buyer < User
     include BuyerPermission
+    def buyer_login
+        self.login
+    end
   end
   
   
@@ -42,13 +49,13 @@ module AdminPermisson
   ## execute
   
   my_admin = Admin.new('analyn', 'password', '127.0.0.1')
-  my_admin.login
+  my_admin.admin_login
   my_admin.edit_users_profile
   
-  my_admin.change_password('new_password')
+  my_admin.change_password='new_password'
   
   buyer = Buyer.new('ana', 'password', '127.0.0.1')
-  buyer.login
+  buyer.buyer_login
   buyer.buy
   
-  buyer.change_password('new_password')
+  buyer.change_password = 'new_password'

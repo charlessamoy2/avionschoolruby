@@ -1,32 +1,31 @@
 class Phone
-    def bootup(phone)
-        phone.bootup
+    def bootup
+        puts "Random phone booting up"
     end
 end
 
-class Android
+class Android < Phone
     def bootup
         puts "Android phone booting up"
     end
 end
 
-class Apple
+class Apple < Phone
     def bootup
         puts "Apple phone booting up"
     end
 end
 
-class Blackberry
+class Blackberry < Phone
     def bootup
         puts "Blackberry phone booting up"
     end
 end
 
-phone = Phone.new
 android = Android.new
 apple = Apple.new
 blackberry = Blackberry.new
 
-phone.bootup(android)
-phone.bootup(apple)
-phone.bootup(blackberry)
+android.bootup
+apple.bootup
+blackberry.bootup

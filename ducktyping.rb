@@ -29,3 +29,36 @@ blackberry = Blackberry.new
 android.bootup
 apple.bootup
 blackberry.bootup
+
+class Electronic
+    def instruction(elec)
+        elec.instruction
+    end
+end
+
+class Keyboard
+    def instruction
+        puts "This is a keyboard"
+    end
+end
+
+class Mouse
+    def instruction
+        puts "This is a mouse"
+    end
+end
+
+class Monitor
+    def instruction
+        puts "This is a monitor"
+    end
+end
+
+elec = Electronic.new
+keyboard = Keyboard.new
+mouse = Mouse.new
+monitor = Monitor.new
+
+elec.instruction(keyboard)
+elec.instruction(mouse)
+elec.instruction(monitor)

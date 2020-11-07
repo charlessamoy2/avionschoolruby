@@ -59,8 +59,8 @@ INSERT INTO classrooms (id,student_id,section)
 VALUES(10,10,"C");
 
 SELECT s.id,first_name,section
-FROM students AS s
-INNER JOIN classrooms AS c ON s.id=c.id;
+FROM students s
+INNER JOIN classrooms c ON s.id=c.id;
 
 SELECT s.id,first_name,section
 FROM students s

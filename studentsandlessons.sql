@@ -60,16 +60,16 @@ VALUES(10,10,"C");
 
 SELECT s.id,first_name,section
 FROM students s
-INNER JOIN classrooms c ON s.id=c.id;
+INNER JOIN classrooms c ON s.id=c.student_id;
 
 SELECT s.id,first_name,section
 FROM students s
-LEFT JOIN classrooms c ON s.id=c.id;
+LEFT JOIN classrooms c ON s.id=c.student_id;
 
 SELECT s.id,first_name,section
 FROM students s
-RIGHT JOIN classrooms c ON s.id=c.id;
+RIGHT JOIN classrooms c ON s.id=c.student_id;
 
 SELECT s.id,first_name,section
 FROM students s
-FULL JOIN classrooms c ON s.id=c.id;
+FULL JOIN classrooms c ON s.id=c.student_id;

@@ -116,3 +116,27 @@ consumer.use_keyboard(Keyboard.new)
 technician.fix_keyboard(KeyboardComponents.new)
 
 #Dependency inversion principle
+class Printer
+    def initialize(text)
+        @text = text
+    end
+
+    def print(type)
+        type.format(@text)
+    end
+end
+
+class DocxFormat
+    def format(text)
+        puts "Printed Docx File with text: #{text}"
+    end
+end
+
+class PdfFormat
+    def format(text)
+        puts "Printed PDF File with text: #{text}"
+    end
+end
+
+printer = Printer.new("Hello")
+printer.print(DocxFormat.new)

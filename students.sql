@@ -1,7 +1,7 @@
 CREATE TABLE students (
   id integer NOT NULL, 
   first_name varchar(255), 
-  middle-name varchar(255), 
+  middle_name varchar(255), 
   last_name varchar(255), 
   age integer, 
   location varchar(255)
@@ -30,3 +30,17 @@ SET first_name= 'Ana', middle_name='Cui', last_name = 'Cajocson', age=25, locati
 WHERE id=1;
 
 DELETE FROM students WHERE id=(SELECT MAX(id) FROM students);
+
+SELECT COUNT(id)
+FROM students;
+
+SELECT *
+FROM students
+WHERE location='Manila';
+
+SELECT AVG(age)
+FROM students;
+
+SELECT *
+FROM students
+ORDER BY age ASC;

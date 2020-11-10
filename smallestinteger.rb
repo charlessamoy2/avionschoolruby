@@ -7,5 +7,3 @@ def get_smallest(arr)
     end
     return tempNum
 end
-
-puts get_smallest([34,0,2,100])
